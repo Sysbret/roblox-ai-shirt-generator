@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roblox Shirt & Pants AI Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        form { margin-bottom: 20px; }
+        img { border: 1px solid #ccc; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Roblox Shirt & Pants AI Generator</h1>
+    <form method="POST">
+        <label>
+            What do you want on your Roblox clothing?
+            <input type="text" name="prompt" style="width: 300px;" required>
+        </label>
+        <label>
+            <select name="template">
+                <option value="shirt">Shirt</option>
+                <option value="pants">Pants</option>
+            </select>
+        </label>
+        <button type="submit">Generate</button>
+    </form>
+    {% if image_url %}
+        <div>
+            <h2>Your Generated Image:</h2>
+            <img src="{{ image_url }}" width="292" height="279">
+            <p><a href="{{ image_url }}" download>Download for Roblox</a></p>
+            <p><strong>Note:</strong> Replace the dummy generator in <code>app.py</code> with a real AI image API for production use.</p>
+        </div>
+    {% endif %}
+</body>
+</html>
